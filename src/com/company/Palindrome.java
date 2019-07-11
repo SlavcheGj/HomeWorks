@@ -13,14 +13,14 @@ class Palindrome<E> {
     }
 
     public void checkPalindrome(){
-        List<E> tmp = new ArrayList<>(list);
-        Collections.reverse(tmp);
-        if(list.equals(tmp)) {
-            System.out.println("palindrome \n");
-        }else {
-            System.out.println("Not palindrome \n");
-        }
 
+        for(int i=0;i<(list.size()-1)/2;i++) {
+            if (!(list.get(i).equals(list.get((list.size()-1)-i)))) {
+                System.out.println("Not palindrome \n");
+                return;
+            }
+        }
+        System.out.println("Palindrome \n");
     }
 
 }
